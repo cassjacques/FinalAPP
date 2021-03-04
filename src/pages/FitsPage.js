@@ -7,9 +7,10 @@ class FitsPage extends React.Component {
     };
 
     componentDidMount() {
-        fetch('https://localhost:4000/api/v1/fits')
+        fetch('http://localhost:4000/api/v1/fits')
             .then((response) => response.json())
             .then((jsonData) => {
+                console.log(jsonData);
                 this.setState({
                     fits: jsonData,
                 });
