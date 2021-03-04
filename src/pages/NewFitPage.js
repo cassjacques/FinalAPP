@@ -23,7 +23,16 @@ class NewFitPage extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(this.state),
-    });
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((jsonData) => {
+        this.props.history.push('/fits');
+      })
+      .catch((err) => {
+        console.log(err)
+      });
   };
 
   render() {
@@ -32,7 +41,7 @@ class NewFitPage extends React.Component {
         <h1>Add A New Fit</h1>
 
         <form onSubmit={this.handleSubmit}>
-        <div>
+          <div>
             <label htmlFor="title">Title</label><br />
             <input type="text" id="title" name="title" value={this.state.title} onChange={this.handleChange} />
           </div>
@@ -55,7 +64,6 @@ class NewFitPage extends React.Component {
 
           <button type="submit">Add Fit</button>
         </form>
-
       </div>
     );
   }

@@ -9,6 +9,7 @@ const FitsCard = (props) => {
       <hr />
       <br />
       <br />
+      <br />
     </div>
   );
 };

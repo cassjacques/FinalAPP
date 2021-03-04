@@ -9,18 +9,15 @@ class EditFitPage extends React.Component {
     vibe: '',
   };
 
-  componentDidMount() {
-    console.log('Getting Fit')
-    fetch(`http://localhost:4000/api/v1/fits/${this.props.match.params.id}`)
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((jsonData) => {
-        console.log(jsonData);
-        this.setState(jsonData)
-      })
-      .catch((err) => console.log(err));
+  componentDidMount = () => {
+    fetch(`http://localhost4000/api/v1/fits/${this.props.match.params.id}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((jsonData) => {
+      this.setState(jsonData)
+    })
+    .catch((err) => console.log(err));
   }
 
   handleChange = (event) => {
