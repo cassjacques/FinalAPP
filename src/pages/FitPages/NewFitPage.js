@@ -49,7 +49,7 @@ class NewFitPage extends React.Component {
           </div>
           <div>
             <label htmlFor="blogPost">Blog Post</label><br />
-            <input type="text" id="blogPost" name="blogPost" value={this.state.blogPost} onChange={this.handleChange} />
+            <textarea id="blogPost" name="blogPost" cols="20" rows="20" value={this.state.blogPost} onChange={this.handleChange} />
           </div>
           <div>
             <label htmlFor="nowPlaying">Now Playing</label><br />

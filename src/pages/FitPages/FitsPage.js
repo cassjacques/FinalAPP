@@ -40,7 +40,7 @@ class FitsPage extends React.Component {
     render() {
         return (
 
-            <div>
+            <div className="fitCard">
                 <FitsList fits={this.state.fits} deleteFit={this.handleDeleteFit} />
             </div>
 

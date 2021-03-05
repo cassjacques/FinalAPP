@@ -5,7 +5,7 @@ import routes from './config/routes';
 function App() {
   return (
     <>
-      <Header/>
+      <Header />
       { routes }
     </>
   );

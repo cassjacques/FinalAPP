@@ -44,26 +44,28 @@ class ShowFitPage extends React.Component {
             .catch((err) => console.log(err))
     };
 
-    
+
     render() {
         return (
-            <div>
-                <h1>{this.state.fit.title}</h1>
+            <form>
+                <div>
+                    <h1>{this.state.fit.title}</h1>
 
-                <p>{this.state.fit.blogPost}</p>
-                <p>Now Playing
-                    <br />
-                    {this.state.fit.nowPlaying}
-                </p>
-                <p>Weather
-                    <br />
-                    {this.state.fit.weather}
-                </p>
-                <p>Vibe
-                    <br />
-                    {this.state.fit.vibe}
-                </p>
-            </div>
+                    <p>{this.state.fit.blogPost}</p>
+                    <h2>Now Playing:
+                        <p>{this.state.fit.nowPlaying}</p>
+                    </h2>
+                    <h2>Weather:
+                        <p>{this.state.fit.weather}</p>
+                    </h2>
+                    <h2>Vibe:
+                        <p>{this.state.fit.vibe}</p>
+                    </h2>
+                </div>
+                <button>BACK</button>
+                <button>EDIT</button>
+                <button type="delete">DELETE</button>
+            </form>
         );
     };
 };
