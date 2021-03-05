@@ -10,7 +10,6 @@ class FitsPage extends React.Component {
         fetch('http://localhost:4000/api/v1/fits')
             .then((response) => response.json())
             .then((jsonData) => {
-                console.log(jsonData);
                 this.setState({
                     fits: jsonData,
                 });
@@ -40,11 +39,13 @@ class FitsPage extends React.Component {
 
     render() {
         return (
+
             <div>
                 <FitsList fits={this.state.fits} deleteFit={this.handleDeleteFit} />
             </div>
-        );
+
+        )
     };
 }
 
-export default FitsPage
+export default FitsPage;

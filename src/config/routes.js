@@ -5,6 +5,7 @@ import HomePage from '../pages/HomePage';
 import FitsPage from '../pages/FitsPage';
 import NewFitPage from '../pages/NewFitPage';
 import EditFitPage from '../pages/EditFitPage';
+import ShowFitPage from '../pages/ShowFitPage'
 
 const routes = (
   <Switch>
@@ -12,6 +13,7 @@ const routes = (
     <Route path='/fits' component={FitsPage} />
     <Route path='/new-fit' component={NewFitPage} />
     <Route path='/edit-fit/:id' component={EditFitPage} />
+    <Route path='/show-fit/:id' component={ShowFitPage} />
   </Switch>
 );
 

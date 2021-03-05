@@ -9,11 +9,7 @@ class NewFitPage extends React.Component {
     vibe: '',
   };
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-  };
+
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -25,7 +21,7 @@ class NewFitPage extends React.Component {
       body: JSON.stringify(this.state),
     })
       .then((response) => {
-        return response.json();
+        return response.json
       })
       .then((jsonData) => {
         this.props.history.push('/fits');
@@ -33,6 +29,12 @@ class NewFitPage extends React.Component {
       .catch((err) => {
         console.log(err)
       });
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
   };
 
   render() {
