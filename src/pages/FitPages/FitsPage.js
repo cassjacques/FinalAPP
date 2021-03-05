@@ -1,5 +1,5 @@
 import React from 'react'
-import FitsList from '../components/Fits/FitsList';
+import FitsList from '../../components/Fits/FitsList';
 
 class FitsPage extends React.Component {
     state = {
