@@ -13,7 +13,7 @@ class NewFitPage extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:4000/api/v1/fits', {
+    fetch('http://localhost:4020/api/v1/fits', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ class NewFitPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div  className="card">
         <h1>Add A New Fit</h1>
 
         <form onSubmit={this.handleSubmit}>

@@ -7,7 +7,7 @@ class FitsPage extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:4000/api/v1/fits')
+        fetch('http://localhost:4020/api/v1/fits')
             .then((response) => response.json())
             .then((jsonData) => {
                 this.setState({
@@ -18,7 +18,7 @@ class FitsPage extends React.Component {
     }
 
     handleDeleteFit = (fitId) => {
-        fetch(`http://localhost:4000/api/v1/fits/${fitId}`, {
+        fetch(`http://localhost:4020/api/v1/fits/${fitId}`, {
             method: 'DELETE'
         })
             .then((response) => {
@@ -40,7 +40,7 @@ class FitsPage extends React.Component {
     render() {
         return (
 
-            <div className="fitCard">
+            <div>
                 <FitsList fits={this.state.fits} deleteFit={this.handleDeleteFit} />
             </div>
 

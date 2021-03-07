@@ -12,7 +12,7 @@ class EditFitPage extends React.Component {
 
 
   componentDidMount = () => {
-    fetch(`http://localhost:4000/api/v1/fits/${this.props.match.params.id}`)
+    fetch(`http://localhost:4020/api/v1/fits/${this.props.match.params.id}`)
       .then((response) => {
         return response.json();
       })
@@ -32,7 +32,7 @@ class EditFitPage extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:4000/api/v1/fits/${this.props.match.params.id}`, {
+    fetch(`http://localhost:4200/api/v1/fits/${this.props.match.params.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ class EditFitPage extends React.Component {
       <div>
         <h1>Edit</h1>
 
-        <form onSubmit={this.handleSubmit}>
+        <form  className="card" onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="title">Title</label><br />
             <input type="text" id="title" name="title" value={this.state.title} onChange={this.handleChange} />

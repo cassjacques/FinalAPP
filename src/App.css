@@ -2,7 +2,7 @@ body{
     background-image: url("https://mocah.org/uploads/posts/1176805-white-black-digital-art-monochrome-texture-circle-light-shape-line-darkness-screenshot-computer-wallpaper-black-and-white-monochrome-photography-font.jpg");
     background-size: auto;
 }
-.logo{
+.logo, nav{
     text-align: center;
     font-family: 'Libre Barcode 128 Text', cursive;
 }
@@ -10,10 +10,11 @@ body{
 .header{
     text-align: center;
     font-size: 50px;
-    background-color: darkgray;
     border-radius: 25px;
     border: solid black 3px;
     font-family: 'Libre Barcode 128 Text', cursive;
+    background: RGB(86, 86, 86);
+    color: black;
 }
 
 a{
@@ -27,14 +28,11 @@ a:hover{
 }
 
 /* --------------------FitsIndex-------------------- */
-.fitCard{
-    font-size: 15px;
-    border-radius: 25px;
-    border: solid black 3px;
-    padding: 10px;
+
+/* --------------------FitsDetail-------------------- */
+h1{
     font-family: 'Cutive Mono', monospace;
 }
-/* --------------------FitsDetail-------------------- */
 h2{
     font-family: 'Cutive Mono', monospace; 
     font-size: 15px;
@@ -44,10 +42,20 @@ p{
     font-size: 15px;
 }
 /* --------------------SOSIndex-------------------- */
-.sosCard{
-    border-radius: 25px;
+.card{
+    border-radius: 10px;
     border: solid black 3px;
     padding: 10px;
     font-family: 'Cutive Mono', monospace;
+    background: RGB(255, 255, 255);
+    background-image: url("https://i.pinimg.com/originals/9f/50/3c/9f503c6c99f7a6fecab1d3155205d9b0.jpg")
 }
 
+
+
+/* --------------------SOSDetail-------------------- */
+.SOSdetail{
+    border-radius: 10px;
+    padding: 10px;
+    
+}

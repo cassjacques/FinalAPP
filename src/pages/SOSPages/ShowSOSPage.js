@@ -1,5 +1,4 @@
 import React from 'react';
-import SOSsList from '../../components/SOSs/SOSsList';
 
 class ShowSOSPage extends React.Component {
     state = {
@@ -15,7 +14,7 @@ class ShowSOSPage extends React.Component {
 
 
     componentDidMount = () => {
-        fetch(`http://localhost:4000/api/v1/soss/${this.props.match.params.id}`)
+        fetch(`http://localhost:4020/api/v1/soss/${this.props.match.params.id}`)
             .then((response) => {
                 return response.json();
             })
@@ -30,7 +29,7 @@ class ShowSOSPage extends React.Component {
 
 
     handleDeleteSOS = (sosId) => {
-        fetch(`http://localhost:4000/api/v1/soss/${sosId}`, {
+        fetch(`http://localhost:4020/api/v1/soss/${sosId}`, {
             method: 'DELETE'
         })
             .then((response) => {
@@ -52,7 +51,7 @@ class ShowSOSPage extends React.Component {
     render() {
         return (
             <form>
-                <div>
+                <div class="card">
                     <h1>{this.state.sos.title}</h1>
 
                     <p>{this.state.sos.blogPost}</p>

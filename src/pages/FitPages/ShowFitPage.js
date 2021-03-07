@@ -13,7 +13,7 @@ class ShowFitPage extends React.Component {
 
 
     componentDidMount = () => {
-        fetch(`http://localhost:4000/api/v1/fits/${this.props.match.params.id}`)
+        fetch(`http://localhost:4020/api/v1/fits/${this.props.match.params.id}`)
             .then((response) => {
                 return response.json();
             })
@@ -26,7 +26,7 @@ class ShowFitPage extends React.Component {
     }
 
     handleDeleteFit = (fitId) => {
-        fetch(`http://localhost:4000/api/v1/fits/${fitId}`, {
+        fetch(`http://localhost:4020/api/v1/fits/${fitId}`, {
             method: 'DELETE'
         })
             .then((response) => {
@@ -48,7 +48,7 @@ class ShowFitPage extends React.Component {
     render() {
         return (
             <form>
-                <div>
+                <div className="card">
                     <h1>{this.state.fit.title}</h1>
 
                     <p>{this.state.fit.blogPost}</p>

@@ -7,7 +7,7 @@ class SOSsPage extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:4000/api/v1/soss')
+        fetch('http://localhost:4020/api/v1/soss')
             .then((response) => response.json())
             .then((jsonData) => {
                 this.setState({
@@ -18,7 +18,7 @@ class SOSsPage extends React.Component {
     }
 
     handleDeleteSOS = (sosId) => {
-        fetch(`http://localhost:4000/api/v1/soss/${sosId}`, {
+        fetch(`http://localhost:4020/api/v1/soss/${sosId}`, {
             method: 'DELETE'
         })
             .then((response) => {
@@ -39,13 +39,11 @@ class SOSsPage extends React.Component {
 
     render() {
         return (
-
-            <div className="sosCard">
+            <div>
                 <SOSsList soss={this.state.soss} deleteSOS={this.handleDeleteSOS} />
             </div>
-
         )
     };
-}
+};
 
 export default SOSsPage;
