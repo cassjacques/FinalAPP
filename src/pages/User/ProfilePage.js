@@ -32,10 +32,17 @@ function ProfilePage() {
     }, []);
 
     return (
-        <div>
-            <h2>Profile Page</h2>
-            <p><strong>Name:</strong> {profile.name}</p>
-            <p><strong>Email:</strong> {profile.email}</p>
+        <div className="card">
+            <h2>Welcome, {profile.userName}</h2>
+            <br />
+            <br />
+            <br />
+            <br />
+            <h2>Your Stats:</h2>
+            <h2><strong>UserName:</strong> <p>{profile.userName}</p></h2>
+            <h2><strong>City:</strong> <p>{profile.city}</p></h2>
+            <h2><strong>Birthday:</strong> <p>{profile.birthday}</p></h2>
+
         </div>
     );
 }

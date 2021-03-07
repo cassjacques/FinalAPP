@@ -5,18 +5,13 @@ function LoginPage({ setToken }) {
     const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [password2, setPassword2] = useState('');
     const [error, setError] = useState(null);
 
     function handleSubmit(event) {
         event.preventDefault();
 
-        if (!email || !password || !password2) {
+        if (!email || !password ) {
             return setError('All fields are required');
-        }
-
-        if (password !== password2) {
-            return setError('Passwords do not match');
         }
 
         const userData = { email, password };
@@ -45,7 +40,7 @@ function LoginPage({ setToken }) {
     }
 
     return (
-        <div>
+        <div className="card sheet login">
             <h2>Login</h2>
             {error && <h2>{error}</h2>}
             <form onSubmit={handleSubmit}>
@@ -69,17 +64,6 @@ function LoginPage({ setToken }) {
                         name="password"
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
-                    />
-                </div>
-
-                <div>
-                    <label htmlFor="name">Confirm Password</label>
-                    <input
-                        type="password"
-                        id="password2"
-                        name="password2"
-                        value={password2}
-                        onChange={(event) => setPassword2(event.target.value)}
                     />
                 </div>
 

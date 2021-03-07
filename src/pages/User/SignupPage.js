@@ -3,16 +3,18 @@ import { useHistory } from 'react-router-dom';
 
 function SignupPage() {
     const history = useHistory();
-    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
+    const [userName, setName] = useState('');
+    const [city, setCity] = useState('');
+    const [birthday, setBirthday] = useState('');
     const [error, setError] = useState(null);
 
     function handleSubmit(event) {
         event.preventDefault();
 
-        if (!name || !email || !password || !password2) {
+        if (!email || !password || !password2 || !userName || !city || !birthday) {
             return setError('All fields are required');
         }
 
@@ -20,7 +22,7 @@ function SignupPage() {
             return setError('Passwords do not match');
         }
 
-        const newUser = { name, email, password };
+        const newUser = { email, password, userName, city, birthday };
 
         console.log(newUser);
 
@@ -46,22 +48,10 @@ function SignupPage() {
     }
 
     return (
-        <div>
+        <div className="card sheet signup">
             <h2>Signup</h2>
             {error && <h2>{error}</h2>}
             <form onSubmit={handleSubmit}>
-
-                <div>
-                    <label htmlFor="name">Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Ex: John Doe"
-                        value={name}
-                        onChange={(event) => setName(event.target.value)}
-                    />
-                </div>
 
                 <div>
                     <label htmlFor="name">Email</label>
@@ -69,7 +59,7 @@ function SignupPage() {
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Ex: jdoe@gmail.com"
+                        placeholder="DoeJ@gmail.com"
                         value={email}
                         onChange={(event) => setEmail(event.target.value)}
                     />
@@ -81,6 +71,7 @@ function SignupPage() {
                         type="password"
                         id="password"
                         name="password"
+                        placeholder="***********"
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
                     />
@@ -92,11 +83,47 @@ function SignupPage() {
                         type="password"
                         id="password2"
                         name="password2"
+                        placeholder="***********"
                         value={password2}
                         onChange={(event) => setPassword2(event.target.value)}
                     />
                 </div>
 
+                <div>
+                    <label htmlFor="name">UserName</label>
+                    <input
+                        type="text"
+                        id="userName"
+                        name="userName"
+                        placeholder="XjaneXdoeX"
+                        value={userName}
+                        onChange={(event) => setName(event.target.value)}
+                    />
+                </div>
+
+                <div>
+                    <label htmlFor="name">City</label>
+                    <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        placeholder="Chicago"
+                        value={city}
+                        onChange={(event) => setCity(event.target.value)}
+                    />
+                </div>
+
+                <div>
+                    <label htmlFor="name">Birthday</label>
+                    <input
+                        type="date"
+                        id="birthday"
+                        name="birthday"
+                        value={birthday}
+                        onChange={(event) => setBirthday(event.target.value)}
+                    />
+                </div>
+             
                 <button type="submit">Submit</button>
             </form>
         </div>

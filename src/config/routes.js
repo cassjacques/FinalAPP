@@ -11,14 +11,14 @@ import EditSOSPage from '../pages/SOSPages/EditSOSPage';
 import ShowSOSPage from '../pages/SOSPages/ShowSOSPage';
 import SignupPage from '../pages/User/SignupPage';
 import LoginPage from '../pages/User/LoginPage';
-import ProfilePage  from '../pages/User/ProfilePage';
+import ProfilePage from '../pages/User/ProfilePage';
 
 const routes = ({ token, setToken }) => (
   <Switch>
     <Route exact path='/' component={HomePage} />
     <Route path='/signup' component={SignupPage} />
     <Route path='/login' component={() => <LoginPage setToken={setToken} />} />
-    {token ? <Route path='/profile' component={ProfilePage} /> : <Redirect to='login' />}<Route path='/fits' component={FitsPage} />
+    {token ? <Route path='/profile' component={ProfilePage} /> : <Redirect to='login' />} 
     <Route path='/fits' component={FitsPage} />
     <Route path='/new-fit' component={NewFitPage} />
     <Route path='/edit-fit/:id' component={EditFitPage} />

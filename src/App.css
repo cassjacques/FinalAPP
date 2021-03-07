@@ -2,12 +2,13 @@ body{
     background-image: url("https://mocah.org/uploads/posts/1176805-white-black-digital-art-monochrome-texture-circle-light-shape-line-darkness-screenshot-computer-wallpaper-black-and-white-monochrome-photography-font.jpg");
     background-size: auto;
 }
-.logo, nav{
+.logo{
+    font-size: 50px;
     text-align: center;
     font-family: 'Libre Barcode 128 Text', cursive;
 }
 /* --------------------HEADER-------------------- */
-.header{
+nav{
     text-align: center;
     font-size: 50px;
     border-radius: 25px;
@@ -27,9 +28,7 @@ a:hover{
     color: white;
 }
 
-/* --------------------FitsIndex-------------------- */
 
-/* --------------------FitsDetail-------------------- */
 h1{
     font-family: 'Cutive Mono', monospace;
 }
@@ -41,7 +40,7 @@ p{
     font-family: 'Nothing You Could Do', cursive;
     font-size: 15px;
 }
-/* --------------------SOSIndex-------------------- */
+
 .card{
     border-radius: 10px;
     border: solid black 3px;
@@ -49,6 +48,31 @@ p{
     font-family: 'Cutive Mono', monospace;
     background: RGB(255, 255, 255);
     background-image: url("https://i.pinimg.com/originals/9f/50/3c/9f503c6c99f7a6fecab1d3155205d9b0.jpg")
+}
+
+.show{
+    width: 50%;
+}
+
+.sheet{
+    display: block;
+    margin: 5% 0 0 65%;
+}
+
+.signup{
+    height: 200px;
+    width: 300px;
+    margin: 5% 0 0 65%;
+}
+
+.login{
+    height: 125px;
+    width: 300px;
+    margin: 5% 0 0 5%
+}
+
+.fits{
+    /* move to the left */
 }
 
 
