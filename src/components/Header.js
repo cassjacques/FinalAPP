@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Routes from '../config/routes';
@@ -14,7 +15,7 @@ function Header(props) {
   return (
     <>
       <nav>
-        <Link to='/'>Home</Link>{' '}
+        <Link to='/profile'>Home</Link>{' '}
         <Link to='/fits'>Fits</Link>{' '}
         <Link to='/soss'>SOS</Link>{' '}
         <Link to='/' onClick={handleLogout}>LogOut</Link>

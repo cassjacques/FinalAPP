@@ -38,7 +38,7 @@ import React from 'react';
 
     render() {
       return (
-        <div className="card">
+        <div className="card new">
           <h1>Add A New SOS</h1>
 
           <form onSubmit={this.handleSubmit}>

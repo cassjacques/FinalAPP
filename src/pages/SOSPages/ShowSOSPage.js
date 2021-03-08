@@ -12,6 +12,7 @@ class ShowSOSPage extends React.Component {
         }
     }
 
+    
 
     componentDidMount = () => {
         fetch(`http://localhost:4020/api/v1/soss/${this.props.match.params.id}`)
@@ -51,7 +52,7 @@ class ShowSOSPage extends React.Component {
     render() {
         return (
             <form>
-                <div class="card">
+                <div className="card">
                     <h1>{this.state.sos.title}</h1>
 
                     <p>{this.state.sos.blogPost}</p>
@@ -69,9 +70,6 @@ class ShowSOSPage extends React.Component {
                     <p>{this.state.sos.price}</p>
 
                 </div>
-                <button>BACK</button>
-                <button>EDIT</button>
-                <button type="delete">DELETE</button>
             </form>
         );
     };

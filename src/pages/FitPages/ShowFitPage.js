@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 class ShowFitPage extends React.Component {
     state = {
@@ -10,7 +11,6 @@ class ShowFitPage extends React.Component {
             vibe: '',
         }
     }
-
 
     componentDidMount = () => {
         fetch(`http://localhost:4020/api/v1/fits/${this.props.match.params.id}`)
@@ -44,7 +44,6 @@ class ShowFitPage extends React.Component {
             .catch((err) => console.log(err))
     };
 
-
     render() {
         return (
             <form>
@@ -62,9 +61,6 @@ class ShowFitPage extends React.Component {
                         <p>{this.state.fit.vibe}</p>
                     </h2>
                 </div>
-                <button>BACK</button>
-                <button>EDIT</button>
-                <button type="delete">DELETE</button>
             </form>
         );
     };

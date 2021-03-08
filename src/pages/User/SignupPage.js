@@ -6,15 +6,15 @@ function SignupPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
-    const [userName, setName] = useState('');
+    const [userName, setUserName] = useState('');
     const [city, setCity] = useState('');
-    const [birthday, setBirthday] = useState('');
+    const [starsign, setStarsign] = useState('');
     const [error, setError] = useState(null);
 
     function handleSubmit(event) {
         event.preventDefault();
 
-        if (!email || !password || !password2 || !userName || !city || !birthday) {
+        if (!email || !password || !password2 || !userName || !city || !starsign) {
             return setError('All fields are required');
         }
 
@@ -22,7 +22,7 @@ function SignupPage() {
             return setError('Passwords do not match');
         }
 
-        const newUser = { email, password, userName, city, birthday };
+        const newUser = { email, password, userName, city, starsign };
 
         console.log(newUser);
 
@@ -97,7 +97,7 @@ function SignupPage() {
                         name="userName"
                         placeholder="XjaneXdoeX"
                         value={userName}
-                        onChange={(event) => setName(event.target.value)}
+                        onChange={(event) => setUserName(event.target.value)}
                     />
                 </div>
 
@@ -114,13 +114,14 @@ function SignupPage() {
                 </div>
 
                 <div>
-                    <label htmlFor="name">Birthday</label>
+                    <label htmlFor="name">Starsign</label>
                     <input
-                        type="date"
-                        id="birthday"
-                        name="birthday"
-                        value={birthday}
-                        onChange={(event) => setBirthday(event.target.value)}
+                        type="text"
+                        id="starsign"
+                        name="starsign"
+                        placeholder="Chicago"
+                        value={starsign}
+                        onChange={(event) => setStarsign(event.target.value)}
                     />
                 </div>
              

@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
 
 function ProfilePage() {
     const [profile, setProfile] = useState({});
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        console.log(token);
+
 
         if (token) {
-            fetch('http://localhost:4020/api/v1/users/profile', {
+            fetch(`http://localhost:4020/api/v1/users/profile/`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,16 +33,21 @@ function ProfilePage() {
 
     return (
         <div className="card">
-            <h2>Welcome, {profile.userName}</h2>
+            <h2 className="welcome">Welcome, {profile.userName}</h2>
             <br />
-            <br />
-            <br />
-            <br />
-            <h2>Your Stats:</h2>
-            <h2><strong>UserName:</strong> <p>{profile.userName}</p></h2>
-            <h2><strong>City:</strong> <p>{profile.city}</p></h2>
-            <h2><strong>Birthday:</strong> <p>{profile.birthday}</p></h2>
-
+            <div className="profilebody">
+                <u><h2>Your Stats</h2></u>
+                <h2><strong>UserName:</strong> <p>{profile.userName}</p></h2>
+                {console.log(profile)}
+                <h2><strong>City:</strong> <p>{profile.city}</p></h2>
+                <h2><strong>Starsign:</strong> <p>{profile.starsign}</p></h2>
+            </div>
+            <div className="profilelinks">
+                <Link to='/SOSs'>SOS</Link>{' '}
+                <Link to='/Fits'>Fits</Link>{' '}
+                <Link to='/new-sos'>New SOS</Link>{' '}
+                <Link to='/new-fit'>New Fit</Link>{' '}        
+            </div>
         </div>
     );
 }

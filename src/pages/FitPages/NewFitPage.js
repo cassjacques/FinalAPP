@@ -9,8 +9,6 @@ class NewFitPage extends React.Component {
     vibe: '',
   };
 
-
-
   handleSubmit = (event) => {
     event.preventDefault();
     fetch('http://localhost:4020/api/v1/fits', {
@@ -39,7 +37,7 @@ class NewFitPage extends React.Component {
 
   render() {
     return (
-      <div  className="card">
+      <div  className="card new right">
         <h1>Add A New Fit</h1>
 
         <form onSubmit={this.handleSubmit}>
@@ -63,7 +61,6 @@ class NewFitPage extends React.Component {
             <label htmlFor="vibe">Vibe</label><br />
             <input type="text" id="vibe" name="vibe" value={this.state.vibe} onChange={this.handleChange} />
           </div>
-
           <button type="submit">Add Fit</button>
         </form>
       </div>
