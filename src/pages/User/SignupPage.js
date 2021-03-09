@@ -24,8 +24,6 @@ function SignupPage() {
 
         const newUser = { email, password, userName, city, starsign };
 
-        console.log(newUser);
-
         fetch('http://localhost:4020/api/v1/users', {
             method: 'POST',
             headers: {
@@ -34,14 +32,12 @@ function SignupPage() {
             body: JSON.stringify(newUser),
         })
             .then((response) => {
-                console.log(response);
                 if (response.status === 200) {
                     return response.json();
                 }
                 setError(response.statusText);
             })
             .then((data) => {
-                console.log(data);
                 history.push('/login');
             })
             .catch((err) => setError(err.message))

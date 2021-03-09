@@ -24,6 +24,15 @@ class ShowSOSPage extends React.Component {
                     sos: jsonData
                 })
             })
+            // .then(() => {
+            //     fetch(`http://localhost:4020/api/v1/soss/photo/${this.state.sos.fileName}`)
+            //         .then(function(response) {
+            //             return response.blob();
+            //         })
+            //         .then(function(imageBlob) {
+            //             console.log(imageBlob);
+            //         });
+            // })
             .catch((err) => console.log(err));
     }
 
@@ -69,6 +78,8 @@ class ShowSOSPage extends React.Component {
                     <h2>Price:</h2>
                     <p>{this.state.sos.price}</p>
 
+                    <h2>Photo:</h2>
+                    <p>{this.state.sos.fileName}</p>
                 </div>
             </form>
         );

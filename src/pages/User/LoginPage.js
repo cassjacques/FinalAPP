@@ -15,7 +15,6 @@ function LoginPage({ setToken }) {
         }
 
         const userData = { email, password };
-        console.log(userData);
 
         fetch('http://localhost:4020/api/v1/auth/login', {
             method: 'POST',
@@ -25,7 +24,6 @@ function LoginPage({ setToken }) {
             body: JSON.stringify(userData),
         })
             .then((response) => {
-                console.log(response);
                 if (response.status === 200) {
                     return response.json();
                 }

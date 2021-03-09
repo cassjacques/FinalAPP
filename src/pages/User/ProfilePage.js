@@ -17,13 +17,11 @@ function ProfilePage() {
                 },
             })
                 .then((response) => {
-                    console.log(response)
                     if (response.status === 200) {
                         return response.json();
                     }
                 })
                 .then((data) => {
-                    console.log(data);
                     setProfile(data.profile);
                 })
                 .catch((err) => console.log(err));
@@ -38,7 +36,6 @@ function ProfilePage() {
             <div className="profilebody">
                 <u><h2>Your Stats</h2></u>
                 <h2><strong>UserName:</strong> <p>{profile.userName}</p></h2>
-                {console.log(profile)}
                 <h2><strong>City:</strong> <p>{profile.city}</p></h2>
                 <h2><strong>Starsign:</strong> <p>{profile.starsign}</p></h2>
             </div>

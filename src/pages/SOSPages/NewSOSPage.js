@@ -10,7 +10,14 @@ class NewSOSPage extends React.Component {
     size: '',
     condition: '',
     price: '',
+    fileName: ''
   };
+
+  setFileName = (fileName) => {
+    this.setState({
+      fileName: fileName
+    })
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -76,7 +83,7 @@ class NewSOSPage extends React.Component {
             <label htmlFor="price">price</label><br />
             <input type="text" id="price" name="price" value={this.state.price} onChange={this.handleChange} />
           </div>
-          
+          <FileUpload setFileName={this.setFileName} />
           <button type="submit">Add SOS</button>
         </form>
       </div>
