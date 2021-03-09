@@ -32,7 +32,10 @@ class EditFitPage extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:4200/api/v1/fits/${this.props.match.params.id}`, {
+    
+    console.log(this.props.match.params.id);
+    fetch(`http://localhost:4020/api/v1/fits/${this.props.match.params.id}`, {
+    
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
