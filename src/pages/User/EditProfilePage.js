@@ -1,6 +1,6 @@
 import React from 'react';
 
-class EditUserPage extends React.Component {
+class EditProfilePage extends React.Component {
 
   state = {
     email: '',
@@ -77,4 +77,4 @@ class EditUserPage extends React.Component {
   };
 };
 
-export default EditUserPage;
+export default EditProfilePage;

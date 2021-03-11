@@ -9,8 +9,15 @@ class ShowFitPage extends React.Component {
             nowPlaying: '',
             weather: '',
             vibe: '',
+            fileName: '',
         }
-    }
+    };
+
+    setFileName = (fileName) => {
+        this.setState({
+          fileName: fileName
+        })
+      }
 
     componentDidMount = () => {
         fetch(`http://localhost:4020/api/v1/fits/${this.props.match.params.id}`)
@@ -25,25 +32,6 @@ class ShowFitPage extends React.Component {
             .catch((err) => console.log(err));
     }
 
-    handleDeleteFit = (fitId) => {
-        fetch(`http://localhost:4020/api/v1/fits/${fitId}`, {
-            method: 'DELETE'
-        })
-            .then((response) => {
-                return response.json();
-            })
-            .then(() => {
-                const stateCopy = { ...this.state };
-                const updatedState = stateCopy.fits.filter((fitObj) => {
-                    return fitObj._id !== fitId
-                });
-                this.setState({
-                    fits: updatedState
-                });
-            })
-            .catch((err) => console.log(err))
-    };
-
     render() {
         return (
             <form>
@@ -51,15 +39,20 @@ class ShowFitPage extends React.Component {
                     <h1>{this.state.fit.title}</h1>
 
                     <p>{this.state.fit.blogPost}</p>
-                    <h2>Now Playing:
+
+                    <h2>Now Playing:</h2>
                         <p>{this.state.fit.nowPlaying}</p>
-                    </h2>
-                    <h2>Weather:
+
+                    <h2>Weather:</h2>
                         <p>{this.state.fit.weather}</p>
-                    </h2>
-                    <h2>Vibe:
+
+                    <h2>Vibe:</h2>
                         <p>{this.state.fit.vibe}</p>
-                    </h2>
+
+                    <h2>Photo:</h2>
+                    <p>{this.state.sos.fileName}</p>
+
+                    <p>{this.state.sos.fileName}</p>
                 </div>
             </form>
         );

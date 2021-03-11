@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CSS from '../App.css';
+//import CSS from '../App.css';
 
 
 const HomePage = () => {

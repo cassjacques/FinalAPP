@@ -40,10 +40,9 @@ function ProfilePage() {
                 <h2><strong>Starsign:</strong> <p>{profile.starsign}</p></h2>
             </div>
             <div className="profilelinks">
-                <Link to='/SOSs'>SOS</Link>{' '}
-                <Link to='/Fits'>Fits</Link>{' '}
                 <Link to='/new-sos'>New SOS</Link>{' '}
-                <Link to='/new-fit'>New Fit</Link>{' '}        
+                <Link to='/new-fit'>New Fit</Link>{' '}
+
             </div>
         </div>
     );

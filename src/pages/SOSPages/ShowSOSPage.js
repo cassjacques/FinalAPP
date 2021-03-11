@@ -9,10 +9,15 @@ class ShowSOSPage extends React.Component {
             size: '',
             condition: '',
             price: '',
+            fileName: '',
         }
     }
 
-    
+    setFileName = (fileName) => {
+        this.setState({
+          fileName: fileName
+        })
+      }
 
     componentDidMount = () => {
         fetch(`http://localhost:4020/api/v1/soss/${this.props.match.params.id}`)
@@ -24,39 +29,8 @@ class ShowSOSPage extends React.Component {
                     sos: jsonData
                 })
             })
-            // .then(() => {
-            //     fetch(`http://localhost:4020/api/v1/soss/photo/${this.state.sos.fileName}`)
-            //         .then(function(response) {
-            //             return response.blob();
-            //         })
-            //         .then(function(imageBlob) {
-            //             console.log(imageBlob);
-            //         });
-            // })
             .catch((err) => console.log(err));
     }
-
-
-
-    handleDeleteSOS = (sosId) => {
-        fetch(`http://localhost:4020/api/v1/soss/${sosId}`, {
-            method: 'DELETE'
-        })
-            .then((response) => {
-                return response.json();
-            })
-            .then(() => {
-                const stateCopy = { ...this.state };
-                const updatedState = stateCopy.soss.filter((sosObj) => {
-                    return sosObj._id !== sosId
-                });
-                this.setState({
-                    soss: updatedState
-                });
-            })
-            .catch((err) => console.log(err))
-    };
-
 
     render() {
         return (
@@ -78,7 +52,6 @@ class ShowSOSPage extends React.Component {
                     <h2>Price:</h2>
                     <p>{this.state.sos.price}</p>
 
-                    <h2>Photo:</h2>
                     <p>{this.state.sos.fileName}</p>
                 </div>
             </form>

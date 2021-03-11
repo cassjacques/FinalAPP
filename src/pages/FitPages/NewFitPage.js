@@ -1,4 +1,6 @@
 import React from 'react';
+import FileUpload from '../../components/Upload/FileUpload';
+
 
 class NewFitPage extends React.Component {
   state = {
@@ -7,7 +9,14 @@ class NewFitPage extends React.Component {
     nowPlaying: '',
     weather: '',
     vibe: '',
+    fileName: '',
   };
+
+  setFileName = (fileName) => {
+    this.setState({
+      fileName: fileName
+    })
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -61,6 +70,7 @@ class NewFitPage extends React.Component {
             <label htmlFor="vibe">Vibe</label><br />
             <input type="text" id="vibe" name="vibe" value={this.state.vibe} onChange={this.handleChange} />
           </div>
+          <FileUpload setFileName={this.setFileName} />
           <button type="submit">Add Fit</button>
         </form>
       </div>
